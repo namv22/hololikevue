@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <img alt="Hololike logo" src="../assets/watermark small.png">
+  	<br/><br/>
+    <img alt="Hololike logo" src="../assets/watermark small.png" class="rotating">
     <HelloWorld msg="Work in progress, please come back later!!!"/>
   </div>
 </template>
@@ -16,3 +17,47 @@ export default {
   }
 }
 </script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+@keyframes rotating
+    {
+    from
+        {
+        transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        }
+    to
+        {
+        transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        }
+    }
+@-webkit-keyframes rotating
+    {
+    from
+        {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        }
+    to
+        {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        }
+    }
+.rotating
+    {
+    -webkit-animation: rotating 5s linear infinite;
+    -moz-animation: rotating 5s linear infinite;
+    -ms-animation: rotating 5s linear infinite;
+    -o-animation: rotating 5s linear infinite;
+    animation: rotating 5s linear infinite;
+    }
+</style>
