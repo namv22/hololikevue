@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+    <img alt="Hololike logo" src="../assets/watermark small.png">
     <HelloWorld msg="Work in progress, please come back later!!!"/>
   </div>
 </template>
