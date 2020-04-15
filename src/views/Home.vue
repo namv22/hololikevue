@@ -1,19 +1,22 @@
 <template>
   <div class="home">
+    <MainNavbar></MainNavbar>
   	<br/><br/>
     <img alt="Hololike logo" src="../assets/watermark small.png" class="rotating">
-    <HelloWorld msg="Work in progress, please come back later!!!"/>
+    <MainView msg="Work in progress, please come back later!!!"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import MainView from '@/components/MainView.vue'
+import MainNavbar from "@/components/MainNavbar";
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    MainView,
+    MainNavbar
   }
 }
 </script>
