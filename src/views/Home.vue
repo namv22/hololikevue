@@ -12,7 +12,8 @@
     </div>
     <div>
       <!-- Simply add the component (NB! Add your page link as prop data-href="String" and your preferred link title as link-text="String") -->
-    <vue-facebook-page data-href="https://www.facebook.com/Hololike" link-text="T? mang clip Hololive v? d?ch" />
+    <vue-facebook-page data-href="https://www.facebook.com/Hololike" link-text="Tớ Mang Clip Hololive Về Dịch" />
+    <md-tooltip md-direction="right">Click here to get news from Facebook</md-tooltip>
     </div>
   </div>
 </template>

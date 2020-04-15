@@ -9,12 +9,14 @@
       <div class="md-toolbar-section-end">
         <md-list-item href="https://www.facebook.com/Hololike">
           <img alt="Hololike FB" src="../assets/facebook.png" />
+          <md-tooltip md-direction="bottom">Like us on Facebook</md-tooltip>
         </md-list-item>
 
         <md-list-item
           href="https://www.youtube.com/channel/UCwq3aenbgJR1ZWLvBi2JvTA"
         >
           <img alt="Hololike YT" src="../assets/youtube.png" />
+          <md-tooltip md-direction="bottom">Subscrive to us on Youtube</md-tooltip>
         </md-list-item>
       </div>
     </md-toolbar>
