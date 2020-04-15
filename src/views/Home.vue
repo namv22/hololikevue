@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <MainNavbar></MainNavbar>
-    <br/><br/><br/><br/>
+    <br /><br /><br /><br />
     <div style="background-color: #fff; height: 100vh;">
       <img
         alt="Hololike logo"
@@ -9,6 +9,10 @@
         class="rotating"
       />
       <MainView msg="Work in progress, please come back later!!!" />
+    </div>
+    <div>
+      <!-- Simply add the component (NB! Add your page link as prop data-href="String" and your preferred link title as link-text="String") -->
+    <vue-facebook-page data-href="https://www.facebook.com/Hololike" link-text="T? mang clip Hololive v? d?ch" />
     </div>
   </div>
 </template>
