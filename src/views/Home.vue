@@ -1,19 +1,24 @@
 <template>
   <div class="home">
     <MainNavbar></MainNavbar>
-    <br /><br /><br /><br />
-    <div style="background-color: #fff; height: 100vh;">
+    <div class="container-fluid md-elevation-22">
       <img
         alt="Hololike logo"
         src="../assets/watermark small.png"
         class="rotating"
       />
-      <MainView msg="Work in progress, please come back later!!!" />
+      <h1>Work in progress, please come back later!!!</h1>
+      <MainView></MainView>
     </div>
     <div>
       <!-- Simply add the component (NB! Add your page link as prop data-href="String" and your preferred link title as link-text="String") -->
-    <vue-facebook-page data-href="https://www.facebook.com/Hololike" link-text="Tớ Mang Clip Hololive Về Dịch" />
-    <md-tooltip md-direction="right">Click here to get news from Facebook</md-tooltip>
+      <vue-facebook-page
+        data-href="https://www.facebook.com/Hololike"
+        link-text="Tớ Mang Clip Hololive Về Dịch"
+      />
+      <md-tooltip md-direction="right"
+        >Click here to get news from Facebook</md-tooltip
+      >
     </div>
   </div>
 </template>
@@ -66,5 +71,17 @@ export default {
   -ms-animation: rotating 5s linear infinite;
   -o-animation: rotating 5s linear infinite;
   animation: rotating 5s linear infinite;
+}
+.container-fluid {
+  background-color: white;
+  padding: 15px;
+  width: 1800px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 25px;
+  overflow: hidden;
+  clear: both;
+  background-clip: border-box;
 }
 </style>

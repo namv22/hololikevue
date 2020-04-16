@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div id="app">
     <md-toolbar md-elevation="0">
       <div class="md-toolbar-section-start">
@@ -22,7 +22,7 @@
     </md-toolbar>
 
     <div style="position: relative;">
-      <parallax :fixed="true">
+      <parallax :fixed="false">
         <img src="@/assets/Korone chase Risu.jpg" height="720px" />
       </parallax>
       <h1 class="font_name">Tớ Mang Clip Hololive Về Dịch</h1>
@@ -58,7 +58,9 @@ export default {
 .font_name {
   font-size: 72px;
   font-family: "000 Chinacat [TeddyBear]";
-  color: white;
+  color: #46c3f2;
+  text-shadow: white;
+  border-radius: 50%;
 }
 .bottom-gradient {
   background-image: linear-gradient(
