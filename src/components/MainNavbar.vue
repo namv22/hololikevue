@@ -16,14 +16,16 @@
           href="https://www.youtube.com/channel/UCwq3aenbgJR1ZWLvBi2JvTA"
         >
           <img alt="Hololike YT" src="../assets/youtube.png" />
-          <md-tooltip md-direction="bottom">Subscrive to us on Youtube</md-tooltip>
+          <md-tooltip md-direction="bottom"
+            >Subscrive to us on Youtube</md-tooltip
+          >
         </md-list-item>
       </div>
     </md-toolbar>
 
     <div style="position: relative;">
       <parallax :fixed="false">
-        <img src="@/assets/Korone chase Risu.jpg" height="720px" />
+        <img src="@/assets/Korone chase Risu.jpg"/>
       </parallax>
       <h1 class="font_name">Tớ Mang Clip Hololive Về Dịch</h1>
     </div>
