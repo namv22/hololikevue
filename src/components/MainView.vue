@@ -7,51 +7,44 @@
       align="center"
       style="padding-right: 100px"
     >
-      <b-card
-        v-if="post.id % 2 !== 0"
-        :img-src="'http://img.youtube.com/vi/'+post.yturl+'/mqdefault.jpg'"
-        img-alt="Card image"
-        img-left
-        style="max-width: 800px;"
-        border-variant="secondary"
-        header-border-variant="secondary"
-      >
-        <b-card-text>
-          <div class="md-title" align="left">{{ post.name }}</div>
-        </b-card-text>
-        <b-button v-b-toggle="post.created" variant="outline-info"
-          >Xem</b-button
-        >
-      </b-card>
-      <br />
-      <b-card
-        v-if="post.id % 2 === 0"
-        :img-src="'http://img.youtube.com/vi/'+post.yturl+'/mqdefault.jpg'"
-        img-alt="Card image"
-        img-right
-        style="max-width: 800px;"
-        border-variant="secondary"
-        header-border-variant="secondary"
-      >
-        <b-card-text>
-          <div class="md-title" align="right">{{ post.name }}</div>
-        </b-card-text>
-        <b-button v-b-toggle="post.created" variant="outline-info"
-          >Xem</b-button
-        >
-      </b-card>
+      <md-card class="md-elevation-12">
+        <md-card-area>
+          <md-card-media>
+            <img
+              :src="
+                'http://img.youtube.com/vi/' + post.yturl + '/hqdefault.jpg'
+              "
+            />
+          </md-card-media>
 
-      <b-collapse :id="post.created" class="mt-2">
-        <b-card>
-          <b-embed
-            type="iframe"
-            aspect="16by9"
-            :src="'https://www.youtube.com/embed/' + post.yturl"
-            allowfullscreen
-          ></b-embed>
-          <h2 class="card-text" align="left">{{ post.description }}</h2>
-        </b-card>
-      </b-collapse>
+          <md-card-header>
+            <div class="md-title">{{ post.name }}</div>
+          </md-card-header>
+
+          <md-card-content align="left">
+            {{ post.description }}
+          </md-card-content>
+        </md-card-area>
+
+        <md-card-expand>
+          <md-card-actions md-alignment="space-between">
+            <md-card-expand-trigger>
+              <md-button>Xem</md-button>
+            </md-card-expand-trigger>
+          </md-card-actions>
+
+          <md-card-expand-content>
+            <md-card-content align="left">
+              <b-embed
+                type="iframe"
+                aspect="16by9"
+                :src="'https://www.youtube.com/embed/' + post.yturl"
+                allowfullscreen
+              ></b-embed>
+            </md-card-content>
+          </md-card-expand-content>
+        </md-card-expand>
+      </md-card>
     </div>
   </div>
 </template>

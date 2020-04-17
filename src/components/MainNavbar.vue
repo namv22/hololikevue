@@ -24,8 +24,8 @@
     </md-toolbar>
 
     <div style="position: relative;">
-      <parallax :fixed="false">
-        <img src="@/assets/Korone chase Risu.jpg"/>
+      <parallax :fixed="true">
+        <img :src="images.cover" height="720px"/>
       </parallax>
       <h1 class="font_name">Tớ Mang Clip Hololive Về Dịch</h1>
     </div>
@@ -37,6 +37,13 @@ import Parallax from "vue-parallaxy";
 
 export default {
   name: "RegularToolbar",
+  data() {
+        return {
+            images: {
+                cover: require('@/assets/Korone_chase_Risu.jpg')
+            }
+        }
+    },
   components: {
     Parallax,
   },
