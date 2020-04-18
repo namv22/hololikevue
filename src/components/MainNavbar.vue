@@ -1,6 +1,6 @@
 ﻿<template>
   <div id="app">
-    <md-toolbar md-elevation="0">
+    <md-toolbar class="md-transparent" md-elevation="10">
       <div class="md-toolbar-section-start">
         <router-link to="/">
           <h1 class="md-title font_title" style="">Hololike</h1>
@@ -22,31 +22,31 @@
         </md-list-item>
       </div>
     </md-toolbar>
-
-    <div style="position: relative;">
-      <parallax :fixed="true">
-        <img :src="images.cover" height="720px"/>
-      </parallax>
-      <h1 class="font_name">Tớ Mang Clip Hololive Về Dịch</h1>
-    </div>
+    <b-card
+    overlay
+    :img-src="images.cover"
+    img-alt="Card Image"
+    text-variant="white"
+    img-height="600px"
+  >
+    <b-card-text class="font_name" style="padding-top: 700px">
+      Tớ Mang Clip Hololive Về Dịch
+    </b-card-text>
+  </b-card>
   </div>
 </template>
 
 <script>
-import Parallax from "vue-parallaxy";
-
 export default {
-  name: "RegularToolbar",
+  name: "MainNavbar",
   data() {
-        return {
-            images: {
-                cover: require('@/assets/Korone_chase_Risu.jpg')
-            }
-        }
-    },
-  components: {
-    Parallax,
+    return {
+      images: {
+        cover: require("@/assets/KoroneRisu.jpg"),
+      },
+    };
   },
+  components: {},
   props: {
     colorOnScroll: {
       type: Number,
@@ -68,14 +68,25 @@ export default {
   font-size: 72px;
   font-family: "000 Chinacat [TeddyBear]";
   color: #46c3f2;
-  text-shadow: white;
-  border-radius: 50%;
+  text-shadow: gray;
+  border-radius: 75%;
+  border-color: gray;
 }
 .bottom-gradient {
   background-image: linear-gradient(
     to top,
     rgba(0, 0, 0, 0.4) 0%,
     transparent 72px
+  );
+}
+
+.repeating-gradient {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 0, 0, 0.25),
+    rgba(255, 0, 0, 0.25) 5px,
+    rgba(0, 0, 255, 0.25) 5px,
+    rgba(0, 0, 255, 0.25) 10px
   );
 }
 </style>

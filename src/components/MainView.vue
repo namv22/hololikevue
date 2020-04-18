@@ -5,25 +5,21 @@
       v-for="post in posts"
       v-bind:key="post.created"
       align="center"
-      style="padding-right: 100px"
     >
       <md-card class="md-elevation-12">
         <md-card-area>
-          <md-card-media>
-            <img
+          <md-card-media
+            ><img
               :src="
                 'http://img.youtube.com/vi/' + post.yturl + '/hqdefault.jpg'
               "
-            />
-          </md-card-media>
+          /></md-card-media>
 
           <md-card-header>
             <div class="md-title">{{ post.name }}</div>
           </md-card-header>
 
-          <md-card-content align="left">
-            {{ post.description }}
-          </md-card-content>
+          <md-card-content align="left"> </md-card-content>
         </md-card-area>
 
         <md-card-expand>
@@ -105,9 +101,8 @@ a {
   display: inline-block;
   vertical-align: top;
 }
-.md-dialog {
-  max-height: 1400px;
-  max-width: 800px;
+.md-card-content {
+  white-space: pre-wrap;
 }
 
 .Accordion {

@@ -2,7 +2,16 @@
   <div class="home">
     <MainNavbar></MainNavbar>
     <div class="container-fluid md-elevation-22">
-      <MainView></MainView>
+      <b-tabs content-class="mt-3" fill>
+        <b-tab title="Game" active><MainView></MainView></b-tab>
+        <b-tab title="Music"
+          ><p>Work in progress, please come back later</p></b-tab
+        >
+        <b-tab title="Meme"
+          ><p>Work in progress, please come back later</p></b-tab
+        >
+        <b-tab title="About"><About></About></b-tab>
+      </b-tabs>
     </div>
     <div>
       <!-- Simply add the component (NB! Add your page link as prop data-href="String" and your preferred link title as link-text="String") -->
@@ -20,7 +29,8 @@
 <script>
 // @ is an alias to /src
 import MainView from "@/components/MainView.vue";
-import MainNavbar from "@/components/MainNavbar";
+import MainNavbar from "@/components/MainNavbar.vue";
+import About from "@/views/About.vue";
 
 export default {
   name: "Home",
