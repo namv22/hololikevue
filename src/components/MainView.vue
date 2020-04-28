@@ -6,14 +6,9 @@
       v-bind:key="post.created"
       align="center"
     >
-      <md-card class="md-elevation-12">
+      <md-card class="md-elevation-12" v-if="post.tag === 'game'">
         <md-card-area>
-          <md-card-media
-            ><img
-              :src="
-                'http://img.youtube.com/vi/' + post.yturl + '/hqdefault.jpg'
-              "
-          /></md-card-media>
+          <md-card-media></md-card-media>
 
           <md-card-header>
             <div class="md-title">{{ post.name }}</div>

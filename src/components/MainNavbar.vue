@@ -27,9 +27,9 @@
     :img-src="images.cover"
     img-alt="Card Image"
     text-variant="white"
-    img-height="600px"
+    img-width="1280px"
   >
-    <b-card-text class="font_name" style="padding-top: 700px">
+    <b-card-text class="font_name" style="padding-top: 500px">
       Tớ Mang Clip Hololive Về Dịch
     </b-card-text>
   </b-card>
