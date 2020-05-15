@@ -1,11 +1,11 @@
 <template>
-  <div class="about">
-    <h1>This is a website for Hololike fanpage</h1>
-  </div>
+<div>
+    This is a website for Hololike fanpage
+</div>
 </template>
 
 <script>
 export default {
-  name: "About",
+    name: "About",
 };
 </script>

@@ -3,7 +3,7 @@
     <md-toolbar class="md-transparent" md-elevation="10">
       <div class="md-toolbar-section-start">
         <router-link to="/">
-          <h1 class="md-title font_title" style="">Hololike</h1>
+          <h1 class="md-title font_title" style="">Hololike - Tớ Mang Clip Hololive Về Dịch</h1>
         </router-link>
       </div>
       <div class="md-toolbar-section-end">
@@ -22,30 +22,12 @@
         </md-list-item>
       </div>
     </md-toolbar>
-    <b-card
-    overlay
-    :img-src="images.cover"
-    img-alt="Card Image"
-    text-variant="white"
-    img-width="1280px"
-  >
-    <b-card-text class="font_name" style="padding-top: 500px">
-      Tớ Mang Clip Hololive Về Dịch
-    </b-card-text>
-  </b-card>
   </div>
 </template>
 
 <script>
 export default {
   name: "MainNavbar",
-  data() {
-    return {
-      images: {
-        cover: require("@/assets/KoroneRisu.jpg"),
-      },
-    };
-  },
   components: {},
   props: {
     colorOnScroll: {
