@@ -1,14 +1,10 @@
 <template>
 <div>
     <div id="posts" v-for="post in posts" v-bind:key="post.name">
-        <b-card no-body style="max-width: 20rem;" img-src="https://placekitten.com/380/200" img-alt="Image" img-top class="md-elevation-12" v-if="post.tag === 'game'">
-            <b-card-body>
-                <md-card-media>
-                    <img :src="
+        <b-card no-body style="max-width: 20rem;" :src="
                 'http://img.youtube.com/vi/' + post.yturl + '/hqdefault.jpg'
-              " />
-                </md-card-media>
-
+              " img-alt="Image" img-top class="md-elevation-12" v-if="post.tag === 'game'">
+            <b-card-body>
                 <b-card-title>{{ post.name }}</b-card-title>
                 <b-card-text> </b-card-text>
             </b-card-body>
