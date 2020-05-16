@@ -1,18 +1,19 @@
 <template>
 <div>
     <div id="posts" v-for="post in posts" v-bind:key="post.name">
-        <b-card no-body style="max-width: 20rem;" :src="
-                'http://img.youtube.com/vi/' + post.yturl + '/hqdefault.jpg'
-              " img-alt="Image" img-top class="md-elevation-12" v-if="post.tag === 'meme'">
+        <b-card no-body style="max-width: 20rem;" class="md-elevation-12" v-if="post.tag === 'meme'">
             <b-card-body>
+                <md-card-media>
+                    <img :src="
+                'http://img.youtube.com/vi/' + post.yturl + '/hqdefault.jpg'
+              " />
+                </md-card-media>
                 <b-card-title>{{ post.name }}</b-card-title>
-                <b-card-text>
-
-                </b-card-text>
+                <b-card-text></b-card-text>
             </b-card-body>
             <b-card-body>
-                <b-button v-b-modal.modal-xl variant="outline-secondary">Xem</b-button>
-                <b-modal id="modal-xl" size="xl">
+                <b-button v-b-modal.modal-xl="memeId(i)" variant="outline-secondary">Xem</b-button>
+                <b-modal size="xl" :id="'modal' + i">
                     <b-embed type="iframe" aspect="16by9" :src="'https://www.youtube.com/embed/' + post.yturl" allowfullscreen></b-embed>
                 </b-modal>
             </b-card-body>
