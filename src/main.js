@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import VueMaterial from 'vue-material'
+import { MdTabs } from 'vue-material/dist/components'
 import 'vue-material/dist/vue-material.min.css'
 import VueFacebookPage from 'vue-facebook-page'
 import VueYoutube from 'vue-youtube'
@@ -14,7 +15,8 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-Vue.use(VueMaterial)
+Vue.use(VueMaterial);
+Vue.use(MdTabs);
 
 Vue.use(Vuetify);
 

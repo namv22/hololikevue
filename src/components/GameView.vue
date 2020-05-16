@@ -1,24 +1,26 @@
 <template>
 <div>
-    <div id="posts" v-for="post in posts" v-bind:key="post.name">
-        <b-card no-body style="max-width: 20rem;" class="md-elevation-12" v-if="post.tag === 'game'">
-            <b-card-body>
-                <md-card-media>
-                    <img :src="
+    <ul>
+        <li id="posts" v-for="post in posts" v-bind:key="post.name">
+            <b-card no-body style="max-width: 20rem;" class="md-elevation-12" v-if="post.tag === 'game'">
+                <b-card-body>
+                    <md-card-media>
+                        <img :src="
                 'http://img.youtube.com/vi/' + post.yturl + '/hqdefault.jpg'
               " />
-                </md-card-media>
-                <b-card-title>{{ post.name }}</b-card-title>
-                <b-card-text></b-card-text>
-            </b-card-body>
-            <b-card-body>
-                <b-button v-b-modal.modal-xl="gameId(i)" variant="outline-secondary">Xem</b-button>
-                <b-modal size="xl" :id="'modal' + i">
-                    <b-embed type="iframe" aspect="16by9" :src="'https://www.youtube.com/embed/' + post.yturl" allowfullscreen></b-embed>
-                </b-modal>
-            </b-card-body>
-        </b-card>
-    </div>
+                    </md-card-media>
+                    <b-card-title>{{ post.name }}</b-card-title>
+                    <b-card-text></b-card-text>
+                </b-card-body>
+                <b-card-body>
+                    <b-button v-b-modal.modal-xl="'game'" @click="sendInfo(post)" variant="outline-secondary">Xem</b-button>
+                </b-card-body>
+            </b-card>
+        </li>
+    </ul>
+    <b-modal size="xl" id="game" :title="selectedPost.name">
+        <b-embed type="iframe" aspect="16by9" :src="'https://www.youtube.com/embed/' + selectedPost.yturl" allowfullscreen></b-embed>
+    </b-modal>
 </div>
 </template>
 
@@ -32,6 +34,7 @@ export default {
         return {
             showDialog: false,
             posts: [],
+            selectedPost: '',
             playerVars: {
                 autoplay: 0,
             },
@@ -39,8 +42,11 @@ export default {
     },
     methods: {
         playing() {},
-        gameId(i) {
-            return "modal" + i;
+        modalId(i) {
+            return "game";
+        },
+        sendInfo(post) {
+            this.selectedPost = post;
         },
     },
     props: {
@@ -48,7 +54,7 @@ export default {
     },
     created() {
         db.collection("holoposts")
-            .orderBy("name")
+            .orderBy("date")
             .get()
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {

@@ -1,24 +1,26 @@
 <template>
 <div>
-    <div id="posts" v-for="post in posts" v-bind:key="post.name">
-        <b-card no-body style="max-width: 20rem;" class="md-elevation-12" v-if="post.tag === 'meme'">
-            <b-card-body>
-                <md-card-media>
-                    <img :src="
+    <ul>
+        <li id="posts" v-for="post in posts" v-bind:key="post.name">
+            <b-card no-body style="max-width: 20rem;" class="md-elevation-12" v-if="post.tag === 'meme'">
+                <b-card-body>
+                    <md-card-media>
+                        <img :src="
                 'http://img.youtube.com/vi/' + post.yturl + '/hqdefault.jpg'
               " />
-                </md-card-media>
-                <b-card-title>{{ post.name }}</b-card-title>
-                <b-card-text></b-card-text>
-            </b-card-body>
-            <b-card-body>
-                <b-button v-b-modal.modal-xl="memeId(i)" variant="outline-secondary">Xem</b-button>
-                <b-modal size="xl" :id="'modal' + i">
-                    <b-embed type="iframe" aspect="16by9" :src="'https://www.youtube.com/embed/' + post.yturl" allowfullscreen></b-embed>
-                </b-modal>
-            </b-card-body>
-        </b-card>
-    </div>
+                    </md-card-media>
+                    <b-card-title>{{ post.name }}</b-card-title>
+                    <b-card-text></b-card-text>
+                </b-card-body>
+                <b-card-body>
+                    <b-button v-b-modal.modal-xl="'meme'" @click="sendInfo(post)" variant="outline-secondary">Xem</b-button>
+                </b-card-body>
+            </b-card>
+        </li>
+    </ul>
+    <b-modal size="xl" :id="'meme'" :title="selectedPost.name">
+        <b-embed type="iframe" aspect="16by9" :src="'https://www.youtube.com/embed/' + selectedPost.yturl" allowfullscreen></b-embed>
+    </b-modal>
 </div>
 </template>
 
@@ -27,24 +29,33 @@ import db from "@/db";
 
 export default {
     name: "MemeView",
+    name: "MediaCover",
     data() {
         return {
             showDialog: false,
             posts: [],
+            selectedPost: '',
             playerVars: {
                 autoplay: 0,
             },
+            showModal: false,
         };
     },
     methods: {
         playing() {},
+        modalId(i) {
+            return "meme";
+        },
+        sendInfo(post) {
+            this.selectedPost = post;
+        },
     },
     props: {
         msg: String,
     },
     created() {
         db.collection("holoposts")
-            .orderBy("name")
+            .orderBy("date")
             .get()
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {

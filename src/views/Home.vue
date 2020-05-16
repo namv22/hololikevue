@@ -60,7 +60,7 @@ export default {
 .container-fluid {
     background-color: white;
     padding: 15px;
-    width: 1800px;
+    width: 1200px;
     display: block;
     margin-left: auto;
     margin-right: auto;
