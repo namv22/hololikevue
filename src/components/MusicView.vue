@@ -90,6 +90,7 @@ a {
 .b-card {
     margin: 4px;
     display: inline-block;
+    margin-bottom: auto;
 }
 
 .md-card-content {
