@@ -2,7 +2,7 @@
 <div>
     <ul>
         <li id="posts" v-for="post in posts" v-bind:key="post.name">
-            <b-card no-body style="max-width: 20rem;" class="md-elevation-12" v-if="post.tag === 'meme'">
+            <b-card no-body style="max-width: 20rem;" class="card md-elevation-12" v-if="post.tag === 'meme'">
                 <b-card-body>
                     <md-card-media>
                         <img :src="
@@ -92,6 +92,13 @@ a {
     display: inline-block;
     margin-bottom: auto;
 }
+
+.card {
+    margin: 4px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
 
 .md-card-content {
     white-space: pre-wrap;
