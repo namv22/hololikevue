@@ -18,7 +18,7 @@
             </b-card>
         </li>
     </ul>
-    <b-modal size="xl" :id="'meme'" :title="selectedPost.name">
+    <b-modal size="xl" id="meme" :title="selectedPost.name">
         <b-embed type="iframe" aspect="16by9" :src="'https://www.youtube.com/embed/' + selectedPost.yturl" allowfullscreen></b-embed>
     </b-modal>
 </div>
@@ -86,19 +86,13 @@ li {
 a {
     color: #42b983;
 }
-
-.b-card {
-    margin: 4px;
-    display: inline-block;
-    margin-bottom: auto;
-}
-
 .card {
-    margin: 4px;
     display: inline-block;
-    margin-bottom: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
-
 
 .md-card-content {
     white-space: pre-wrap;

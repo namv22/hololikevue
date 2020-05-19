@@ -86,18 +86,13 @@ a {
     color: #42b983;
 }
 
-.b-card {
-    margin: 4px;
-    display: inline-block;
-    margin-bottom: auto;
-}
-
 .card {
-    margin: 4px;
     display: inline-block;
-    margin-bottom: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
-
 
 .md-card-content {
     white-space: pre-wrap;
