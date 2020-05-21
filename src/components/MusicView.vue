@@ -1,7 +1,7 @@
 <template>
 <div>
     <ul>
-        <li id="posts" v-for="post in posts" v-bind:key="post.name">
+        <li id="posts" v-for="post in orderedPosts" v-bind:key="post.name">
             <b-card no-body style="max-width: 20rem;" class="card md-elevation-12" v-if="post.tag === 'music'">
                 <b-card-body>
                     <md-card-media>
@@ -30,6 +30,11 @@ import db from "@/db";
 export default {
     name: "MusicView",
     name: "MediaCover",
+    computed: {
+        orderedPosts: function () {
+            return _.orderBy(this.posts, ['date'], ['desc'])
+        }
+    },
     data() {
         return {
             showDialog: false,
