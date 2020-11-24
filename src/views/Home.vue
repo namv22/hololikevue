@@ -30,10 +30,10 @@
 <script>
 // @ is an alias to /src
 import GameView from "@/components/GameView.vue";
-import MainNavbar from "@/components/MainNavbar.vue";
 import About from "@/views/About.vue";
 import MemeView from "@/components/MemeView.vue"
 import MusicView from "@/components/MusicView.vue"
+import MainNavbar from "@/components/MainNavbar.vue"
 
 export default {
   name: "Home",
@@ -46,10 +46,10 @@ export default {
   },
   components: {
     GameView,
-    MainNavbar,
     MemeView,
     About,
     MusicView,
+    MainNavbar
   },
 };
 </script>

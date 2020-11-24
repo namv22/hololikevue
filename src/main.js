@@ -15,11 +15,15 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import _ from 'lodash'
+import Embed from 'v-video-embed'
 
 Vue.use(VueMaterial);
 Vue.use(MdTabs);
 
 Vue.use(Vuetify);
+
+// global register
+Vue.use(Embed);
 
 // The plugin is loaded here.
 // You have to pass your FB app Id as a second parameter
