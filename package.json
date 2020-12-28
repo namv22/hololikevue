@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --open",
-    "build": "vue-cli-service build && gulp licenses",
+    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "dev": "npm run serve",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run dev"
@@ -16,6 +16,7 @@
     "bootstrap-vue": "^2.21.1",
     "core-js": "3.7.0",
     "element-ui": "^2.14.1",
+    "eslint-loader": "2.1.2",
     "firebase": "^8.1.1",
     "flatpickr": "^4.6.6",
     "nouislider": "14.6.3",
@@ -49,5 +50,6 @@
     "sass": "1.29.0",
     "sass-loader": "10.1.0",
     "vue-template-compiler": "2.6.12"
-  }
+  },
+  "resolutions": { "eslint-loader": "2.1.2" }
 }
