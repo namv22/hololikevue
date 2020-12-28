@@ -142,7 +142,6 @@
                 this.player.playVideo()
             },
             playing() {
-                console.log('\o/ we are watching!!!')
             },
             modalId(i) {
                 return "game";
