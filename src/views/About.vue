@@ -1,7 +1,7 @@
 <template>
 <div>
     <h1>This is a website for Hololike fanpage</h1>
-    <img alt="Hololike logo" src="../assets/watermark small.png" class="rotating">
+    <img alt="Hololike logo" src="../assets/img/watermark small.png" class="rotating">
     <p align="left">
         This website was created by these following components:
     </p>

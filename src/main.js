@@ -1,51 +1,64 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import VueMaterial from 'vue-material'
-import { MdTabs } from 'vue-material/dist/components'
-import 'vue-material/dist/vue-material.min.css'
-import VueFacebookPage from 'vue-facebook-page'
-import VueYoutube from 'vue-youtube'
+// =========================================================
+// * Vue Material Kit - v1.2.2
+// =========================================================
+//
+// * Product Page: https://www.creative-tim.com/product/vue-material-kit
+// * Copyright 2019 Creative Tim (https://www.creative-tim.com)
+// * Licensed under MIT (https://github.com/creativetimofficial/vue-material-kit/blob/master/LICENSE.md)
+//
+// * Coded by Creative Tim
+//
+// =========================================================
+//
+// * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+import Vue from "vue"; 
+import App from "./App.vue"; 
+import router from "./router"; 
+
+import MaterialKit from "./plugins/material-kit"; 
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+
+import VueYoutube from 'vue-youtube'
+import VueFacebookPage from 'vue-facebook-page'
+import _ from 'lodash'
+import { firestorePlugin } from 'vuefire'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-import Vuetify from 'vuetify';
-import 'vuetify/dist/vuetify.min.css';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import _ from 'lodash'
-import Embed from 'v-video-embed'
+import {Modal} from '@/components'
 
-Vue.use(VueMaterial);
-Vue.use(MdTabs);
+Vue.config.productionTip = false; 
 
-Vue.use(Vuetify);
+Vue.use(MaterialKit); 
 
-// global register
-Vue.use(Embed);
+Vue.use(VueYoutube)
 
 // The plugin is loaded here.
 // You have to pass your FB app Id as a second parameter
-
 Vue.use(VueFacebookPage, 219660669313598)
 
-// The plugin to use youtube iframe
-Vue.use(VueYoutube)
+Vue.use(firestorePlugin)
 
 // Install BootstrapVue
 Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
 
-library.add(faUserSecret)
+Vue.component(Modal)
 
-Vue.component('font-awesome-icon', FontAwesomeIcon)
+const NavbarStore =  {
+showNavbar:false
+}; 
 
-Vue.config.productionTip = false
+Vue.mixin( {
+data() {
+return {
+NavbarStore
+    }; 
+}
+}); 
 
-new Vue({
-  router,
-  Vuetify,
-  render: function (h) { return h(App) }
-}).$mount('#app')
+new Vue( {
+router, 
+render:h => h(App)
+}).$mount("#app"); 
